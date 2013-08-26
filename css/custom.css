@@ -1,0 +1,458 @@
+/* 
+    Document   : theme
+    Created on : May 14, 2013, 1:17:28 PM
+    Author     : Mudassar Ali Sahil <sahil_bwp@yahoo.com>
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+/* CUSTOM FONTS */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family:'Arial', sans-serif;
+}
+
+body, .rbStats.pie h5, .rbStats.bars h5, .rbTwitter > a h5, .fancybox-title {
+    font-family:'Arial', sans-serif;
+}
+
+.modern blockquote, .post blockquote, .rbTestimonial blockquote {
+    font-family:'Droid Serif', serif;
+}
+
+/* CUSTOM BACKGROUND */
+
+html {
+    background-color:#ededed !important;
+}
+
+body {
+    background:rgba(255,255,255,1);
+}
+
+
+
+/* CUSTOM COLORS */
+
+i.i-medium,
+input[type="submit"]:hover,
+.no-touch .buttons a:hover,
+.no-touch .modern .post:not(.opened) > a:hover .pTitle:before,
+.no-touch .classic .pTitle:hover h2:before,
+.no-touch #comments-title:hover:after,
+.no-touch .rbAccordion.large h4:hover:before,
+.no-touch .rbPosts.classic header:hover a:before,
+.rbPricingTable .featured header,
+.no-touch .sectionTitle h3:hover i,
+.no-touch .rbTextIcon.large > a:hover > i,
+.no-touch .rbSocial.thumbnails ul li:hover,
+.no-touch .tagcloud > a:hover,
+.no-touch #footer1 input[type="submit"]:hover,
+.no-touch #footer1 .tagcloud > a:hover,
+.minimal-2 .tabs span,
+.no-touch .dark_menu #menu li ul li:hover > a, .no-touch #menu li > ul li:hover > a,
+.no-touch .complex .side .nav a:hover,
+.mejs-controls .mejs-time-rail .mejs-time-current,
+.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current,
+.mejs-controls .mejs-volume-button .mejs-volume-slider .mejs-volume-current,
+.no-touch #searchform .holder:hover .icon-search {
+    background-color:#fd4326;
+}
+
+.no-touch a:hover, .no-touch #menu a:hover,
+.no-touch #pageTitle a:hover,
+.no-touch.csstransitions .tone #items a:hover h3, .tone #items a.iehover h3,
+.no-touch .modern .post:not(.opened) > a:hover .pTitle,
+.no-touch .morePosts:not(.nomore):hover span,
+.no-touch .morePosts:not(.nomore):hover span:before,
+.no-touch .classic .pTitle h2:hover,
+.no-touch .classic .meta a:hover,
+.no-touch #comments-title:hover,
+.no-touch #comments-title:hover:before,
+.no-touch .comment-reply-link:hover:before,
+.await,
+#comment-status p,
+.no-touch .rbAccordion.small > section h4:hover, .no-touch .rbAccordion.small > section h4:hover:before,
+.no-touch .rbAccordion.large h4:hover,
+.rbAlert.error,
+.no-touch .rbContactInfo ul li a:hover:before,
+.no-touch .rbContactInfo ul li a:hover,
+.errorMessage,
+.no-touch .rbCustomPosts a:hover h4,
+.no-touch .rbCustomPosts a:hover .comments i:before,
+.no-touch .rbPosts.classic header:hover h3,
+.no-touch .sectionTitle h3:hover,
+.no-touch .rbTextIcon > a:hover > h4,
+.no-touch .rbTextIcon.minimal > a:hover > i,
+.no-touch .list1:hover, .no-touch .list2:hover, .no-touch .list3:hover, .no-touch .list4:hover,
+.no-touch .rbTwitter li a:hover, .no-touch .rbTwitter .time:hover, .no-touch .rbTwitter > a:hover span,
+.no-touch .rbSocial.list li:hover:before, .no-touch .rbSocial.list li:hover a,
+.no-touch .rbSocial.icons li:hover:before,
+.no-touch .rbTabs .titles li a:hover,
+.no-touch .widget.email a:hover i, .no-touch .widget.phone a:hover i,
+.no-touch .widget_meta ul li a:hover:before, .no-touch .widget_meta ul li a:hover,
+.no-touch .widget_pages ul li a:hover, .no-touch .widget_categories ul li a:hover, .no-touch .widget_archive ul li a:hover, .no-touch .widget_recent_entries ul li a:hover, .no-touch .widget_recent_comments ul li a:hover, .no-touch .widget_rss ul li a:hover, #breadcrumb a:hover, #breadcrumb .icon-home:hover, .no-touch #menu > ul > li:hover > a {
+    color:#fd4326;
+}
+
+.ttwo #items .caption,
+.no-touch .anything.folio .arrow a:hover span,
+.minimal-1 .mainControls .m-timer,
+.no-touch .minimal-1 .mainControls .thumbNav li a:hover,
+.no-touch .minimal-1 .mainControls .arrow a:hover span,
+.no-touch .mejs-overlay:hover .mejs-overlay-button, .ch .hover, 
+.no-touch .fancybox-nav span:hover, .no-touch .fancybox-close:hover, .ch .hover {
+    background-color:#fd4326;
+    background-color:rgba(253,67,38,0.9);
+}
+
+.no-touch #menu > ul > li:hover > a,
+.no-touch.csstransitions .tone #items a:hover .caption, .tone #items a.iehover .caption,
+.no-touch .morePosts:not(.nomore):hover,
+.no-touch .morePosts:not(.nomore):hover span,
+.no-touch #comments-title:hover:after,
+.contactErrorBorder,
+.no-touch .sectionTitle h3:hover, .no-touch .rbTextIcon.large:hover, .rbTabs .titles li.opened a, .widget_nav_menu .current-menu-item {
+    border-color:#fd4326;
+}
+
+@media all and (max-width: 940px) {
+
+    .no-touch #menu .responsive:hover {
+        background:#fd4326;
+    }
+    #menu li a:hover {
+        color:#fd4326 !important;
+    }
+
+}
+
+
+
+/* CUSTOM CSS */
+
+@media all and (max-width: 640px) {
+    .rev.fullwidth {
+        display:none !important;
+    }
+}
+.page-id-2199 .rev.fullwidth {
+    width:1920px;
+    height:500px;
+    left:50%;
+    margin:-100px 0 50px -960px;
+}
+
+.page-id-2494 .rev.fullwidth {
+    width:1680px;
+    height:473px;
+    left:50%;
+    margin:-100px 0 50px -840px;
+}
+
+@media all and (max-width: 940px) {
+    .page-id-2494 .rev.fullwidth {
+        width:100%;
+        height:auto;
+        left:0;
+        margin:-100px 0 50px;
+    }
+}
+
+.boxed .rev.blank.fullwidth {
+    width:100%;
+    height:auto;
+    left:0;
+    margin:-100px 0 50px;
+}
+
+/* Custom Slider Skin */
+
+.minimal-2 .tabs {
+    border:1px solid #E9E9E9;
+    border-top:1px solid #FFF;
+}
+.minimal-2 .tabs li {
+    background:#F7F7F7;
+    border-color:#E9E9E9;
+}
+.minimal-2 .tabs h3, .minimal-2 .tabs li.active h3 {
+    color:#333;
+}
+.minimal-2 .tabs h5, .minimal-2 .tabs li.active h5 {
+    color:#AAA !important;
+    font-weight:normal;
+}
+.minimal-2 .tabs i, .minimal-2 .tabs li.active i {
+    background:#333;
+    color:#FFF;
+    font-size:20px;
+    width:40px;
+    height:40px;
+    border-radius:20px;
+    margin:-3px 12px 0 -8px;
+    padding-top:10px;
+}
+.minimal-2 .tabs span {
+    background:#E9E9E9 !important;
+}
+.no-touch .minimal-2 .tabs li:hover {
+    background:#FFF;
+}
+.no-touch .minimal-2 .tabs li:hover i {
+    background:#FD4326;
+}
+.no-touch .minimal-2 .tabs li:hover h3 {
+    color:#FD4326;
+}
+@media all and (max-width: 940px) {
+    .minimal-2 .tabs i { font-size: 20px !important; width: 35px !important; height: 35px !important; padding-top:8px !important; margin:0 0 0 -5px !important; }
+}
+@media all and (max-width: 580px) {
+        .minimal-2 .tabs i { position:absolute !important; left:50%; margin-left:-20px !important; top:14px; }
+}
+@media all and (max-width: 440px) {
+    .minimal-2 .tabs i { top:2px !important; color:#333 !important; background:transparent !important; }
+}
+
+/* new style by sahil babu*/
+
+.sharing-div-right {
+	float:right;
+	vertical-align: baseline;
+}
+.sharing-div-right .fb_edge_widget_with_comment {
+	position: inherit;
+}
+
+
+.cus-span {
+    
+}
+ul.cus-icon {
+    float: left;
+}
+ul.fix-width-ico {
+    margin-top: 0px;
+    float: left;
+}
+ul.fix-width-ico2 {
+    margin-top: 0px;
+    float: left;
+}
+
+ul.fix-width-ico2 li i{
+    border-left: 1px solid #F5F5F5;
+    border-right: 1px solid #F5F5F5;
+    border-top: 1px solid #F5F5F5;
+    display: block;
+    float: left;
+    height: 50px;
+    text-align: center;
+    width: 50px;
+    font-family: arial !important;
+    color: #000000;
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    background-color: transparent;
+    border-radius: 0 0 5px 5px;
+}
+ul.fix-width-ico2 li span {
+    border-right: 1px solid #F5F5F5;
+    border-top: 1px solid #F5F5F5;
+    color: #535353;
+    display: block;
+    float: left;
+    font-size: 16px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0;
+    padding-left: 15px;
+    min-width: 282px;
+    max-width: 329px;
+    width: auto;
+    float:inherit;
+}
+ul.cus-icon li i{
+    border-left: 1px solid #F5F5F5;
+    border-right: 1px solid #F5F5F5;
+    border-top: 1px solid #F5F5F5;
+    display: block;
+    float: left;
+    height: 50px;
+    text-align: center;
+    width: 50px;
+    font-family: arial !important;
+    color: #000000;
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    background-color: transparent;
+    border-radius: 0 0 5px 5px;
+}
+ul.cus-icon li span {
+    border-right: 1px solid #F5F5F5;
+    border-top: 1px solid #F5F5F5;
+    color: #535353;
+    display: block;
+    float: left;
+    font-size: 16px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0;
+    padding-left: 15px;
+    width: 200px;
+    float:inherit;
+}
+ul.fix-width-ico li span {
+    width: 165px;
+}
+.cus-icon-ios {
+    background: url("../images/development/mobile/icon_ios.jpg");
+}
+.cus-icon-android {
+    background: url("../images/development/mobile/icon_android.jpg");
+}
+.cus-icon-windows {
+    background: url("../images/development/mobile/icon_windowsmobile.jpg");
+}
+.cus-icon-sencha {
+    background: url("../images/development/mobile/icon_sencha.jpg");
+}
+.cus-icon-html5 {
+    background: url("../images/development/mobile/icon_html5.jpg");
+}
+.cus-icon-titanium {
+    background: url("../images/development/mobile/icon_titanium.jpg");
+}
+.cus-icon-phonegap {
+    background: url("../images/development/mobile/icon_phonegap.jpg");
+}
+.cus-icon-jqtouch {
+    background: url("../images/development/mobile/icon_jqtouch.jpg");
+}
+.cus-icon-jquery {
+    background: url("../images/development/mobile/icon_jquery.jpg");
+}
+
+.cus-icon-ror {
+    background: url("../images/development/web/icon_ror.jpg");
+}
+.cus-icon-php {
+    background: url("../images/development/web/icon_php.jpg");
+}
+.cus-icon-drupal {
+    background: url("../images/development/web/drupal-logo-vector.png");
+}
+.cus-icon-zf {
+    /*background: url("../images/development/web/zf-logo-mark.png");*/
+    background: url("../images/development/web/sw_dv_06.jpg");
+}
+.cus-icon-wp {
+    background: url("../images/development/web/wordpressLogoSolo.png");
+}
+.cus-icon-lamp {
+    background: url("../images/development/web/icon_lamp.jpg");
+}
+.cus-icon-java {
+    background: url("../images/development/web/icon_java.jpg");
+}
+.cus-icon-net {
+    background: url("../images/development/web/icon_net.jpg");
+}
+.cus-icon-ci {
+    background: url("../images/development/web/ci_logo_flame.jpg");
+}
+
+.cus-icon-apache {
+    background: url("../images/development/web/icon_apache.jpg");
+}
+.cus-icon-mysql {
+    background: url("../images/development/web/icon_mysql.jpg");
+}
+.cus-icon-oracle {
+    background: url("../images/development/web/icon_oracle.jpg");
+}
+.cus-icon-sqlserver {
+    background: url("../images/development/web/icon_sqlserver.jpg");
+}
+.cus-icon-sqlpl {
+    background: url("../images/development/web/icon_sqlpl.jpg");
+}
+.cus-icon-ies {
+    background: url("../images/development/web/icon_ies.jpg");
+}
+
+
+.cus-icon-dhtml {
+    background: url("../images/development/web/icon_dhtml.jpg");
+}
+.cus-icon-html5 {
+    background: url("../images/development/web/icon_html5.jpg");
+}
+.cus-icon-ajax {
+    background: url("../images/development/web/icon_ajax.jpg");
+}
+.cus-icon-wap {
+    background: url("../images/development/web/browser_wap.png");
+}
+.cus-icon-css {
+    background: url("../images/development/web/icon_css.jpg");
+}
+.cus-icon-js {
+    background: url("../images/development/web/icon_js.jpg");
+}
+
+.cus-icon-aws {
+    background: url("../images/development/web/icon_aws.jpg");
+}
+.cus-icon-ec2 {
+    background: url("../images/development/web/icon_ec2.jpg");
+}
+.cus-icon-s3 {
+    background: url("../images/development/web/icon_s3.jpg");
+}
+.cus-icon-ebs {
+    background: url("../images/development/web/icon_ebs.jpg");
+}
+.cus-icon-elb {
+    background: url("../images/development/web/icon_elb.jpg");
+}
+.cus-icon-gapps {
+    background: url("../images/development/web/icon_googleapps.jpg");
+}
+.cus-icon-heroku {
+    background: url("../images/development/web/icon_heroku.jpg");
+}
+.cus-icon-nagios {
+    background: url("../images/development/web/icon_nagios.jpg");
+}
+.cus-icon-zenoss {
+    background: url("../images/development/web/icon_zenoss.jpg");
+}
+.cus-icon-munin {
+    background: url("../images/development/web/icon_munin.jpg");
+}
+.cus-icon-newRelic {
+    background: url("../images/development/web/icon_newRelic.jpg");
+}
+
+.icon_show img{
+    width: 100%;
+      margin-bottom: 20px;
+}
+
+i.i-large-extra {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border-radius: 100px 100px 100px 100px;
+    color: #999999;
+    cursor: default;
+    display: table-cell;
+    float: left;
+    font-size: 48px;
+    height: 200px;
+    margin: -5px 10px 10px 0;
+    text-align: center;
+    vertical-align: middle;
+    width: 200px;
+}

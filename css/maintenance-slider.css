@@ -1,0 +1,46 @@
+/* $Id: maintenance.css,v 1.1.2.2 2011/01/06 07:45:39 al_saif Exp $ */
+@charset "UTF-8";
+#rev_slider_2_1,#rev_slider_2_1_wrapper {
+    width: 940px;
+    height: 400px;
+}
+
+@media only screen and (min-width: 940px) {
+    #rev_slider_2_1,#rev_slider_2_1_wrapper {
+    width: 940px;
+    height: 400px;
+}
+.bannercontainer {
+    width: 940px;
+}
+}
+
+@media only screen and (min-width: 740px) and (max-width: 939px) {
+    #rev_slider_2_1,#rev_slider_2_1_wrapper {
+    width: 740px;
+    height: 314px;
+}
+.bannercontainer {
+    width: 740px;
+}
+}
+
+@media only screen and (min-width: 600px) and (max-width: 759px) {
+    #rev_slider_2_1,#rev_slider_2_1_wrapper {
+    width: 600px;
+    height: 255px;
+}
+.bannercontainer {
+    width: 600px;
+}
+}
+
+@media only screen and (max-width:600px) {
+    #rev_slider_2_1,#rev_slider_2_1_wrapper {
+    width: 100%;
+    height: auto;
+}
+.bannercontainer {
+    width: 100%;
+}
+                    }
