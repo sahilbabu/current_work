@@ -122,14 +122,14 @@ function al_saif_preprocess_page(array &$vars) {
   }
 
   // Add a hidden title for accessibility reasons
-  if ($vars['page']['search']) {
-    $vars['page']['search'] = array_merge(
-      array(
-        'header' => array('#markup' => '<h2 class="element-invisible">' . t('Search') . '</h2>'),
-      ),
-      $vars['page']['search']
-    );
-  }
+//  if ($vars['page']['search']) {
+//    $vars['page']['search'] = array_merge(
+//      array(
+//        'header' => array('#markup' => '<h2 class="element-invisible">' . t('Search') . '</h2>'),
+//      ),
+//      $vars['page']['search']
+//    );
+//  }
 }
 
 

@@ -26,10 +26,10 @@ function al_saif_menu_tree__main_menu(array $vars) {
 //            
 //        }
 //       }
- print "_____________________<pre>";  
-    print_r($vars['tree']);
-//    print_r(drupal_attributes($vars['tree']));
-    print "<pre/>"; exit();
+// print "_____________________<pre>";  
+//    print_r($vars['tree']);
+////    print_r(drupal_attributes($vars['tree']));
+//    print "<pre/>"; exit();
     return '<ul id="menu-main-menu" class="clearfix">' . $vars['tree']['#children'] . '</ul>';
 
 }

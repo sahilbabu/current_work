@@ -75,27 +75,27 @@
     <!-- Header Start -->
 
     <header id="mainHeader" class="f_height dark_menu logo_left">
-      
+
         <?php if ($logo): ?>
-        <div id="logo" class="clearfix">
-            <a href="<?php print $front_page; ?>" style="width: 169px;" rel="home">
-                    <!-- 	<img class="default" src="http://demo.krownthemes.com/goodwork/wp-content/uploads/2012/12/logo1.png" alt="GoodWork" />  -->
+            <div id="logo" class="clearfix">
+                <a href="<?php print $front_page; ?>" style="width: 169px;" rel="home">
+                        <!-- 	<img class="default" src="http://demo.krownthemes.com/goodwork/wp-content/uploads/2012/12/logo1.png" alt="GoodWork" />  -->
                     <img class="default" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /> 
-               <?php // print t('Home'); ?>
-            </a>
-        </div>
+                    <?php // print t('Home'); ?>
+                </a>
+            </div>
         <?php endif; ?>
         <div id="headerWidgets" class="clearfix">
             <div class="left clearfix">
                 <?php if ($contact_mail): ?>
-                <div id="email-widget-2" class="widget sidebox email">
-                    <a href="mailto:<?php print $contact_mail; ?>"><i class="icon-email"></i><?php print $contact_mail; ?></a>
-                </div>
+                    <div id="email-widget-2" class="widget sidebox email">
+                        <a href="mailto:<?php print $contact_mail; ?>"><i class="icon-email"></i><?php print $contact_mail; ?></a>
+                    </div>
                 <?php endif; ?>
                 <?php if ($contact_phone): ?>
-                <div id="phone-widget-2" class="widget sidebox phone">
-                    <a href="tel:<?php print $contact_phone; ?>"><i class="icon-phone"></i> <?php print $contact_phone; ?></a>
-                </div>
+                    <div id="phone-widget-2" class="widget sidebox phone">
+                        <a href="tel:<?php print $contact_phone; ?>"><i class="icon-phone"></i> <?php print $contact_phone; ?></a>
+                    </div>
                 <?php endif; ?>
             </div>
             <div class="right clearfix">
@@ -117,12 +117,20 @@
                 </div>
             </div>
         </div>
-        
-        <nav id="menu">
-               <?php if ($main_menu): ?>
-                    <?php // print render($main_menu); ?>
-                <?php endif; ?>
 
+        <nav id="menu">
+<!--            <p class="responsive">Navigation</p>
+            <ul id="menu-main-menu" class="clearfix">
+                <li class="parent "><a href="#">About</a></li>
+                <li class="parent menu-item"><a href="#">Solutions</a></li>
+                <li class="parent menu-item"><a href="#">Work</a></li>
+                <li class="parent menu-item"><a href="#">References</a></li>
+                <li class="parent menu-item"><a href="#">Blog</a></li>
+                <li class="parent menu-item"><a href="#">Contact</a></li>
+            </ul>-->
+            <?php if ($main_menu): ?>
+                    <?php  print render($main_menu); ?>
+                <?php endif; ?>
             <form role="search" method="get" id="searchform" action="http://demo.krownthemes.com/goodwork/">
                 <div>
                     <input type="text" value="Search the site" name="s" id="s" />
@@ -133,17 +141,17 @@
             </form>
         </nav>
 
-     <nav id="breadcrumb" class="hidden">
+        <nav id="breadcrumb" class="hidden">
             <a href="http://demo.krownthemes.com/goodwork"><i class="icon-home"></i></a> <span>></span> Homepage 
-     </nav>
+        </nav>
     </header>
 
     <!-- Header End -->
-    
+
     <!-- Content Area -->
-    <?php print render($page['content']); ?>
+    <?php  print render($page['content']); ?>
     <!-- Content Area End -->
-    
+
 
 </div>
 
@@ -297,53 +305,53 @@
 
 <div id="scripts">
 
-    <script type='text/javascript' src='<?php print path_to_theme();?>/js/plugins.min.js'></script>
-    <script type='text/javascript' src='<?php print path_to_theme();?>/js/scripts.min.js'></script>
+    <script type='text/javascript' src='<?php print path_to_theme(); ?>/js/plugins.min.js'></script>
+    <script type='text/javascript' src='<?php print path_to_theme(); ?>/js/scripts.min.js'></script>
     <script type="text/javascript">
         var tpj = jQuery;
         tpj.noConflict();
         var revapi1;
 
         tpj(document).ready(
-                function() {
+        function() {
 
-                    if (tpj.fn.cssOriginal != undefined)
-                        tpj.fn.css = tpj.fn.cssOriginal;
+            if (tpj.fn.cssOriginal != undefined)
+                tpj.fn.css = tpj.fn.cssOriginal;
 
-                    if (tpj("#rev_slider_1_1").revolution == undefined)
-                        revslider_showDoubleJqueryError("#rev_slider_1_1");
-                    else
-                        revapi1 = tpj("#rev_slider_1_1").show().revolution(
-                                {
-                                    delay: 6000,
-                                    startwidth: 940,
-                                    startheight: 400,
-                                    hideThumbs: 200,
-                                    thumbWidth: 100,
-                                    thumbHeight: 50,
-                                    thumbAmount: 4,
-                                    navigationType: "bullet",
-                                    navigationArrows: "verticalcentered",
-                                    navigationStyle: "round",
-                                    touchenabled: "on",
-                                    onHoverStop: "on",
-                                    navOffsetHorizontal: 0,
-                                    navOffsetVertical: 20,
-                                    shadow: 2,
-                                    fullWidth: "off",
-                                    stopLoop: "off",
-                                    stopAfterLoops: -1,
-                                    stopAtSlide: -1,
-                                    shuffle: "off",
-                                    hideSliderAtLimit: 0,
-                                    hideCaptionAtLimit: 0,
-                                    hideAllCaptionAtLilmit: 0
-                                });
+            if (tpj("#rev_slider_1_1").revolution == undefined)
+                revslider_showDoubleJqueryError("#rev_slider_1_1");
+            else
+                revapi1 = tpj("#rev_slider_1_1").show().revolution(
+            {
+                delay: 6000,
+                startwidth: 940,
+                startheight: 400,
+                hideThumbs: 200,
+                thumbWidth: 100,
+                thumbHeight: 50,
+                thumbAmount: 4,
+                navigationType: "bullet",
+                navigationArrows: "verticalcentered",
+                navigationStyle: "round",
+                touchenabled: "on",
+                onHoverStop: "on",
+                navOffsetHorizontal: 0,
+                navOffsetVertical: 20,
+                shadow: 2,
+                fullWidth: "off",
+                stopLoop: "off",
+                stopAfterLoops: -1,
+                stopAtSlide: -1,
+                shuffle: "off",
+                hideSliderAtLimit: 0,
+                hideCaptionAtLimit: 0,
+                hideAllCaptionAtLilmit: 0
+            });
 
-                    tpj.restyleRevo(revapi1, tpj("#rev_slider_1_1")
-                            .parent().parent());
+            tpj.restyleRevo(revapi1, tpj("#rev_slider_1_1")
+            .parent().parent());
 
-                }); //ready
+        }); //ready
     </script>
 </div>
 
