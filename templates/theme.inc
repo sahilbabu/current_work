@@ -16,22 +16,14 @@
  * @return string
  */
 function al_saif_menu_tree__main_menu(array $vars) {
-    
-      $attributes = isset($vars['tree']['#attributes']) ? $vars['tree']['#attributes'] : array('class' => 'menu-item');
-      
-  //    print count($vars['tree']).'()()';
-//      foreach ($vars['tree'] as $key => $value) {
-//        print "<pre/>";   print_r($value);
-//        if($value['#theme']=='menu_link__main_menu'){
-//            
-//        }
-//       }
-// print "_____________________<pre>";  
-//    print_r($vars['tree']);
-////    print_r(drupal_attributes($vars['tree']));
-//    print "<pre/>"; exit();
-    return '<ul id="menu-main-menu" class="clearfix">' . $vars['tree']['#children'] . '</ul>';
-
+    $level = 1;
+    foreach ($vars['tree'] as $key => $value) {
+        if ($value['#theme'] == 'menu_link__main_menu') {
+            $level = $value['#original_link']['depth'];
+        }
+    }
+    $id_class = ($level == 1) ? 'id="menu-main-menu"  class="clearfix"' : 'class="clearfix"';
+    return '<ul '.$id_class.'>' . $vars['tree']['#children'] . '</ul>';
 }
 
 /**
@@ -44,7 +36,7 @@ function al_saif_menu_tree__main_menu(array $vars) {
  */
 function al_saif_breadcrumb(array $vars) {
     $breadcrumb = $vars['breadcrumb'];
-
+   // print "<pre/>"; print_r($breadcrumb); exit('</pre> (o)(o)');
     if (!empty($breadcrumb)) {
 
         // Replace the home link with an image

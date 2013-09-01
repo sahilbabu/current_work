@@ -119,15 +119,6 @@
         </div>
 
         <nav id="menu">
-<!--            <p class="responsive">Navigation</p>
-            <ul id="menu-main-menu" class="clearfix">
-                <li class="parent "><a href="#">About</a></li>
-                <li class="parent menu-item"><a href="#">Solutions</a></li>
-                <li class="parent menu-item"><a href="#">Work</a></li>
-                <li class="parent menu-item"><a href="#">References</a></li>
-                <li class="parent menu-item"><a href="#">Blog</a></li>
-                <li class="parent menu-item"><a href="#">Contact</a></li>
-            </ul>-->
             <?php if ($main_menu): ?>
                     <?php  print render($main_menu); ?>
                 <?php endif; ?>
@@ -140,10 +131,13 @@
                 </div>
             </form>
         </nav>
-
-        <nav id="breadcrumb" class="hidden">
-            <a href="http://demo.krownthemes.com/goodwork"><i class="icon-home"></i></a> <span>></span> Homepage 
-        </nav>
+        <?php if ($breadcrumb): ?>
+<!--            <nav id="breadcrumb" >
+                <?php // print $breadcrumb; ?>
+                <a href="http://demo.krownthemes.com/goodwork"><i class="icon-home"></i></a> <span>></span> Homepage 
+            </nav>-->
+          <?php endif; ?>
+        
     </header>
 
     <!-- Header End -->
