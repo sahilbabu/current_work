@@ -81,46 +81,51 @@ function al_saif_html_head_alter(array &$head_elements) {
  */
 function al_saif_theme(array &$existing, $type, $theme, $path) {
     return array(
-        // theme wrapper for the main menu
-        'menu_tree__main_menu' => array(
-            'file' => 'templates/theme.inc',
-            'render element' => 'tree',
-        ),
-        // custom theme function for breadcrumbs
-        'breadcrumb' => array(
-            'file' => 'templates/theme.inc',
-        ),
-        // taxonomy tags
-        'field__taxonomy_term_reference' => array(
-            'file' => 'templates/theme.inc',
-        ),
-        // popup boxes
-        'popup_box' => array(
-            'file' => 'templates/theme.inc',
-            'render element' => 'popup',
-        ),
-        // buttons
-        'button' => array(
-            'file' => 'templates/theme.inc',
-            'render element' => 'element',
-        ),
-        // input with type=password
-        'password' => array(
-            'file' => 'templates/theme.inc',
-            'render element' => 'element',
-        ),
-        // Drupal pagers
-        'pager' => array(
-            'file' => 'templates/theme.inc',
-        ),
-        // popup status messages
-        'status_messages' => array(
-            'file' => 'templates/theme.inc',
-        ),
-        // sort indicator for tables
-        'tablesort_indicator' => array(
-            'file' => 'templates/theme.inc',
-        ),
+    // theme wrapper for the main menu
+    'menu_tree__main_menu' => array(
+    'file' => 'templates/theme.inc',
+    'render element' => 'tree',
+    ),
+    // custom theme function for breadcrumbs
+    'breadcrumb' => array(
+    'file' => 'templates/theme.inc',
+    ),
+    // taxonomy tags
+    'field__taxonomy_term_reference' => array(
+    'file' => 'templates/theme.inc',
+    ),
+    // popup boxes
+    'popup_box' => array(
+    'file' => 'templates/theme.inc',
+    'render element' => 'popup',
+    ),
+    // buttons
+    'button' => array(
+    'file' => 'templates/theme.inc',
+    'render element' => 'element',
+    ),
+    // input with type=password
+    'password' => array(
+    'file' => 'templates/theme.inc',
+    'render element' => 'element',
+    ),
+    // Drupal pagers
+    'pager' => array(
+    'file' => 'templates/theme.inc',
+    ),
+    // popup status messages
+    'status_messages' => array(
+    'file' => 'templates/theme.inc',
+    ),
+    // sort indicator for tables
+    'user_login' => array(
+    'render element' => 'form',
+    'path' => drupal_get_path('theme', 'al_saif') . '/templates',
+    'template' => 'user-login',
+    'preprocess functions' => array(
+                'al_saif_preprocess_user_login'
+                )
+     ),
     );
 }
 

@@ -14,6 +14,14 @@
  *   Array of variables.
  */
 function al_saif_preprocess_html(array &$vars) {
+    $path = drupal_get_path_alias($_GET['q']);
+   // $aliases = explode('/', $path);
+    $vars['classes_array'][] = 'vc_responsive';
+     if($path == 'blog'){
+         $vars['classes_array'][] = 'right-sidebar';
+         
+     }
+    //  print "<pre>"; print_r($vars['classes_array']); exit('======');
     // Add conditional stylesheets for IE
 //  drupal_add_css(
 //    drupal_get_path('theme', 'lc3_clean') . '/css/ie.css',
@@ -46,7 +54,7 @@ function al_saif_preprocess_html(array &$vars) {
 function al_saif_process_html(array &$vars) {
 
     $vars['scripts'] .= '<!--[if lt IE 9]><script src="' . base_path() . path_to_theme() . '/js/html5.js"></script><![endif]-->' . "\n";
-    // print "<pre>"; print_r($vars); exit();
+    
 }
 
 /**
