@@ -1,47 +1,45 @@
 <?php
-// $Id: node.tpl.php,v 1.3.2.1 2010/11/11 13:52:44 danprobo Exp $
+// $Id:  node.tpl.php,v 1.17.2.4 2013/08/19 14:42:44 sahilbabu Exp $
 ?>
-<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<?php if (!$page): ?>
+<?php 
 
-  <?php print render($title_prefix); ?>
-  <?php if (!$page): ?>
-    <h2<?php print $title_attributes; ?> class="title">
-      <a href="<?php print $node_url; ?>"><?php print $title; ?></a>
-    </h2>
-  <?php endif; ?>
-  <?php print render($title_suffix); ?>
+?>
+<article id="node-<?php print $node->nid; ?>" class="format-gallery category-media <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-  <?php if ($display_submitted): ?>
-    <div class="meta submitted">
-      <?php print $user_picture; ?>
-      <?php
-        print t('published by !username on !datetime',
-          array('!username' => $name, '!datetime' => $date));
-      ?>
+    <a class="pTitle clearfix" href="<?php print $node_url; ?>">
+        <h2 class="icon-none"><?php print $title; ?></h2>
+    </a>
+
+    <div class="flexslider pMedia folio">
+        <ul class="slides"><li data-caption="">
+                <img src="http://demo.krownthemes.com/goodwork/wp-content/uploads/2013/01/slide1@2x1-700x350.jpg" width="700" height="350" alt="" />
+            </li><li data-caption="">
+                <img src="http://demo.krownthemes.com/goodwork/wp-content/uploads/2013/01/slide2@2x1-700x350.jpg" width="700" height="350" alt="" />
+            </li><li data-caption="">
+                <img src="http://demo.krownthemes.com/goodwork/wp-content/uploads/2013/01/slide3@2x1-700x350.jpg" width="700" height="350" alt="" />
+            </li></ul>
     </div>
-  <?php endif; ?>
+    <div class="content">
 
-  <div class="content clearfix"<?php print $content_attributes; ?>>
-    <?php
-      hide($content['comments']);
-      hide($content['links']);
-      print render($content);
-    ?>
-  </div>
+        <ul class="meta">
+            <li class="date"><i class="icon icon-calendar-1"></i><span class="p1">21st January 2013</span><span class="pTime p2">21/01/13</span></li>
+            <li class="type"><i class="icon icon-tag"></i><a href="http://demo.krownthemes.com/goodwork/type/gallery/">Gallery</a></li>
+            <li class="comments"><i class="icon icon-comment-1"></i><a href="http://demo.krownthemes.com/goodwork/media/here-is-a-gallery-post/#comments">3</a></li>
+        </ul>
 
-  <?php
-    if ($teaser || !empty($content['comments']['comment_form'])) {
-      unset($content['links']['comment']['#links']['comment-add']);
-    }
-    // Only display the wrapper div if there are links.
-    $links = render($content['links']);
-    if ($links):
-  ?>
-    <div class="links">
-      <?php print $links; ?>
+        <div class="excerpt">
+            <p>
+                <?php
+                    hide($content['comments']);
+                    hide($content['links']);
+                    print render($content);
+                 ?>
+            </p>							
+            <a href="http://demo.krownthemes.com/goodwork/media/here-is-a-gallery-post/" class="more nav-next">Read more</a>
+        </div>
+
     </div>
-  <?php endif; ?>
 
-  <?php print render($content['comments']); ?>
-
-</div>
+</article>
+<?php endif; ?>

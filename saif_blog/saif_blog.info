@@ -1,50 +1,52 @@
-; $Id: saif_blog.info,v 1.9.2.3 2013/07/25 01:16:24 sahilbabu Exp $
+; $Id: al_saif.info,v 1.9.2.3 2013/07/25 01:16:24 danprobo Exp $
 
-base theme = Al Saif Professionals Theme
 name = Al Saif Professionals Blog
 description = Drupal Theme provided by <a href="http://www.alsaifprofessionals.com/">Al Saif Professionals</a> developed by <a href="mailto:sahil.bwp@gmail.com">Mudassar Ali </a> For Contact <a href="mailto:ask.us@alsaifprofessionals.com">ask.us@alsaifprofessionals.com </a>.
+base theme = Al Saif Professionals Theme
 engine = phptemplate
 screenshot = screenshot.png
 core = 7.x
 
+; Normally, themes may list CSS files like this, and if they exist in the theme
+; folder, then they get added to the page. If they have the same file name as a
+; module CSS file, then the theme's version overrides the module's version, so
+; that the module's version is not added to the page. Additionally, a theme may
+; have an entry like this one, without having the corresponding CSS file in the
+; theme's folder, and in this case, it just stops the module's version from
+; being loaded, and does not replace it with an alternate version. We have this
+; here in order for a test to ensure that this correctly prevents the module
+; version from being loaded, and that errors aren't caused by the lack of this
+; file within the theme folder.
+; stylesheets[all][] = system.base.css
 ; -----------------------------------------------------------------------------
 ; STYLES
 ; -----------------------------------------------------------------------------
 stylesheets[all][] = css/style.css
 stylesheets[all][] = css/custom.css
-
+stylesheets[all][] = css/validationEngine.jquery.css?ver=2.4.4
+stylesheets[all][] = http://fonts.googleapis.com/css?family=Droid+Serif:300,300italic,400,400italic,700,700italic
+stylesheets[all][] = css/slider.css
+;stylesheets[print][] = css/print.css
+; Disable some system styles
+;stylesheets[all][] = system.menus.css
 
 ; -----------------------------------------------------------------------------
 ; SCRIPTS
 ; -----------------------------------------------------------------------------
 ;scripts[] = js/jquery/jquery.js?ver=1.8.3
 ;scripts[] = js/popup.js
-
+;scripts[] = js/topMessages.js
 
 ; -----------------------------------------------------------------------------
 ; REGIONS
 ; -----------------------------------------------------------------------------
 regions[search_box] = Search region
-regions[superfish_menu] = Superfish menu
 regions[page_top] = Page top
-regions[preface] = Preface top
-regions[highlighted] = Highlighted
-regions[preface_first] = Preface first
-regions[preface_middle] = Preface middle
-regions[preface_last] = Preface last
 regions[sidebar_first] = Left sidebar
 regions[sidebar_second] = Right sidebar
 regions[content_top] = Content top
 regions[help] = Help
 regions[content] = Main content
-regions[content_bottom] = Content bottom
-regions[bottom_first] = Bottom first
-regions[bottom_middle] = Bottom middle
-regions[bottom_last] = Bottom last
-regions[bottom_1] = Bottom 1
-regions[bottom_2] = Bottom 2
-regions[bottom_3] = Bottom 3
-regions[bottom_4] = Bottom 4
 regions[footer] = Footer
 regions[page_bottom] = Page bottom
 

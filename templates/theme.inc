@@ -199,7 +199,7 @@ function al_saif_password($vars) {
  */
 function al_saif_pager(array $vars) {
   //  die('-----');
-  //print '<pre>'; print_r($vars); exit('</pre>');
+//  print '<pre> pager --- '; print_r($vars['parameters']); exit('</pre>');
     global $pager_page_array, $pager_total;
 
     $tags = $vars['tags'];

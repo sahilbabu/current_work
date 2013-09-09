@@ -136,7 +136,7 @@ function al_saif_theme(array &$existing, $type, $theme, $path) {
 //  $element['#attributes']['class'][] = 'level-' . $element['#original_link']['depth'];
 //  if (
 //
-//$element['#below']) {
+//  $element['#below']) {
 //    $sub_menu = drupal_render($element['#below']);
 //  }
 //  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
@@ -410,4 +410,3 @@ function al_saif_preprocess_block(array &$vars) {
         $vars['classes_array'][] = 'block-without-title';
     }
 }
-

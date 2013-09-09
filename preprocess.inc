@@ -229,6 +229,7 @@ function menu_tree_output_alter($tree) {
  *   Array of variables.
  */
 function al_saif_preprocess_node(array &$vars) {
+   // var_dump($vars); die('----');
     // Display only the first uploaded image in teasers
     if (!empty($vars['teaser']) && isset($vars['content']['field_image'])) {
         $vars['content']['field_image']['#items'] = array($vars['content']['field_image'][0]);
@@ -275,9 +276,16 @@ function al_saif_preprocess_node(array &$vars) {
             unset($vars['content']['links']['comment']['#links']['comment-add']);
         }
     }
-
+    // SAHIL BABU //
+    if ('blog' ==  $vars['node']->type) {
+       // die(date("jS F Y",$vars['node']->created));
+        $vars['blog_category'] = (isset($vars['field_category'])) ? $vars['field_category']['und'] : array();
+        $vars['blog_image'] = (isset($vars['field_image'])) ? $vars['field_image']['und'] : array();
+        $vars['date'] = date("jS F Y",$vars['node']->created); 
+       //  var_dump($vars['date']);
+    }
     // Forum nodes
-    if ('forum' == $vars['node']->type) {
+    if ('forum' ==  $vars['node']->type) {
 
         $vars['classes_array'][] = 'forum-post';
         $vars['classes_array'][] = 'forum-top';
@@ -297,6 +305,7 @@ function al_saif_preprocess_node(array &$vars) {
                 )
         );
     }
+//    print '<pre> node --- '; print_r($vars); exit('</pre>');
 }
 
 /**
