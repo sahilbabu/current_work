@@ -14,14 +14,12 @@
  *   Array of variables.
  */
 function al_saif_preprocess_html(array &$vars) {
-    $path = drupal_get_path_alias($_GET['q']);
+   // $path = drupal_get_path_alias($_GET['q']);
    // $aliases = explode('/', $path);
+  //  print $path;
     $vars['classes_array'][] = 'vc_responsive';
-     if($path == 'blog'){
-         $vars['classes_array'][] = 'right-sidebar';
-         
-     }
-    //  print "<pre>"; print_r($vars['classes_array']); exit('======');
+     
+    ///  print "<pre>"; print_r($vars['page']['#node']); exit('======');
     // Add conditional stylesheets for IE
 //  drupal_add_css(
 //    drupal_get_path('theme', 'lc3_clean') . '/css/ie.css',
@@ -64,7 +62,13 @@ function al_saif_process_html(array &$vars) {
  *   Array of variables.
  */
 function al_saif_preprocess_page(array &$vars) {
-
+    
+     
+     if($vars['node']->type == 'blog'){
+         $vars['classes_array'][] = 'right-sidebar';
+       //  vars['class'][]
+     }
+   //  print "<pre>"; print_r($vars['classes_array']); exit('======');
     // Render social links
     $twitter = check_plain(theme_get_setting('theme_social_link_twitter'));
     $facebook = check_plain(theme_get_setting('theme_social_link_facebook'));
@@ -278,10 +282,14 @@ function al_saif_preprocess_node(array &$vars) {
     }
     // SAHIL BABU //
     if ('blog' ==  $vars['node']->type) {
-       // die(date("jS F Y",$vars['node']->created));
-        $vars['blog_category'] = (isset($vars['field_category'])) ? $vars['field_category']['und'] : array();
-        $vars['blog_image'] = (isset($vars['field_image'])) ? $vars['field_image']['und'] : array();
+        // var_dump($vars['content']);
+       //  print "<pre>"; print_r($vars['field_image'][0]); die("</pre>"); 
+        $vars['blog_category'] = (isset($vars['field_category'])) ? (isset($vars['field_category']['und'])) ? $vars['field_category']['und']: $vars['field_category'] : array();
+        $vars['blog_image'] = (isset($vars['field_image'])) ? (isset($vars['field_image']['und'])) ? $vars['field_image']['und']:$vars['field_image'] : array();
         $vars['date'] = date("jS F Y",$vars['node']->created); 
+        if('full' == $vars['view_mode']){
+          //  $vars['content'] = $vars['content']['body']['#object']->body['und'][0]['value'];
+        }
        //  var_dump($vars['date']);
     }
     // Forum nodes

@@ -142,9 +142,6 @@
 
     <!-- Header End -->
 
-    <div id="pageTitle" class="clearfix">
-        <h1>What We Think</h1>
-    </div>
 
       
 

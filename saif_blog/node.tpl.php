@@ -6,11 +6,9 @@
 //print_r($taxonomy);
 //print '</pre>'; exit;
 ?>
-<?php // if ($type == 'blog'): ?>
-<?php if (!$page): ?>
-    <?php
-     // var_dump($blog_image);
-    ?>
+<?php  if ($type == 'blog' && $view_mode == 'teaser'): ?>
+<?php   // if (!$page): ?>
+
     <article id="node-<?php print $node->nid; ?>" class="format-gallery category-media <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
         <a class="pTitle clearfix" href="<?php print $node_url; ?>">
@@ -62,19 +60,20 @@
 
     </article>
 <?php else: ?>
-<?php  if ($type == 'blog'): ?>
+<?php  if ($type == 'blog' && $view_mode == 'full'):  ?>
 <article class="format-gallery category-media <?php print $classes; ?> clearfix" id="node-<?php print $node->nid; ?>">
 
     <a href="<?php print $node_url; ?>" class="pTitle clearfix">
         <h2 class="icon-none"><?php print $title; ?></h2>
     </a>
     <?php
+       // var_dump($blog_image);
         if (count($blog_image) > 0) {
     ?>
     <div class="flexslider pMedia folio" style="height: auto;">
         
         <div class="flex-viewport" >
-            <ul class="slides" style="width: 1000%; margin-left: -1400px;">
+            <ul class="slides" >
                 <?php
                     foreach ($blog_image as $value) {
                        // $image_url  =   file_create_url($value['uri']);
@@ -113,7 +112,7 @@
            <?php
                 hide($content['comments']);
                 hide($content['links']);
-                print render($content);
+                print render($content['body']['#object']->body['und'][0]['value']);
             ?>
         </div>
 
@@ -124,6 +123,7 @@
 </article>
 <?php endif; ?>
 <?php endif; ?>
+
 <?php /* ?>
 <footer>
 
