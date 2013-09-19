@@ -441,7 +441,6 @@ ul.fix-width-ico li span {
     width: 100%;
       margin-bottom: 20px;
 }
-
 i.i-large-extra {
     background: none repeat scroll 0 0 #EEEEEE;
     border-radius: 100px 100px 100px 100px;
@@ -455,4 +454,14 @@ i.i-large-extra {
     text-align: center;
     vertical-align: middle;
     width: 200px;
+}
+::selection {
+background-color: #FD4326;
+color: #fff;
+text-shadow: none;
+}
+::-moz-selection {
+background-color: #FD4326;
+color: #fff;
+text-shadow: none;
 }
