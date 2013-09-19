@@ -14,12 +14,21 @@
  *   Array of variables.
  */
 function al_saif_preprocess_html(array &$vars) {
-   // $path = drupal_get_path_alias($_GET['q']);
-   // $aliases = explode('/', $path);
-  //  print $path;
+    // $path = drupal_get_path_alias($_GET['q']);
+    // $aliases = explode('/', $path);
+    //  print $path;
+    // print "<pre>"; var_dump(get_defined_vars()); print "</pre>";
+    //   $vars['classes_array'][] = ' page';
+    $shoo = $vars['page']['content']['system_main']['nodes'];
+    $key = key($shoo);
+    $type = $shoo[$key]['body']['#object']->type;
     $vars['classes_array'][] = 'vc_responsive';
-     
-    ///  print "<pre>"; print_r($vars['page']['#node']); exit('======');
+    $vars['classes_array'][] = 'page';
+    if ($type == 'blog') {
+        $vars['classes_array'][] = 'right-sidebar';
+    }
+    //  $node = menu_get_object();
+    // print "<pre>"; print_r($shoo[$key]['body']['#object']->type); exit('======');
     // Add conditional stylesheets for IE
 //  drupal_add_css(
 //    drupal_get_path('theme', 'lc3_clean') . '/css/ie.css',
@@ -52,7 +61,6 @@ function al_saif_preprocess_html(array &$vars) {
 function al_saif_process_html(array &$vars) {
 
     $vars['scripts'] .= '<!--[if lt IE 9]><script src="' . base_path() . path_to_theme() . '/js/html5.js"></script><![endif]-->' . "\n";
-    
 }
 
 /**
@@ -62,13 +70,12 @@ function al_saif_process_html(array &$vars) {
  *   Array of variables.
  */
 function al_saif_preprocess_page(array &$vars) {
-    
-     
-     if($vars['node']->type == 'blog'){
-         $vars['classes_array'][] = 'right-sidebar';
-       //  vars['class'][]
-     }
-   //  print "<pre>"; print_r($vars['classes_array']); exit('======');
+    $shoo = $vars['page']['content']['system_main']['nodes'];
+    $key = key($shoo);
+    $type = $shoo[$key]['body']['#object']->type;
+    $vars['type'] = $type;
+
+    //  print "<pre>"; print_r($vars); exit('======');
     // Render social links
     $twitter = check_plain(theme_get_setting('theme_social_link_twitter'));
     $facebook = check_plain(theme_get_setting('theme_social_link_facebook'));
@@ -163,13 +170,13 @@ function menu_tree_output_alter($tree) {
             $items[] = $data;
         }
     }
-   // print "<pre/>"; print_r($tree); exit('</pre> (o)(o)'); 
+    // print "<pre/>"; print_r($tree); exit('</pre> (o)(o)'); 
     $router_item = menu_get_item();
-     
+
     $num_items = count($items);
     $plid = 0;
     foreach ($items as $i => $data) {
-        
+
         $class = array();
         if ($i == 0) {
             $class[] = 'first';
@@ -190,10 +197,10 @@ function menu_tree_output_alter($tree) {
         if ($data['link']['depth'] == 1) {
             $class[] = 'parent';
         }
-        if($_GET['q'] == $data['link']['link_path']){
+        if ($_GET['q'] == $data['link']['link_path']) {
             $class[] = 'selected';
-           // $mlid = $data['link']['mlid'];
-          //  $plid = $data['link']['plid'];
+            // $mlid = $data['link']['mlid'];
+            //  $plid = $data['link']['plid'];
         }
 //        if($data['link']['mlid'] == $plid){
 //             $class[] = 'selected';
@@ -233,7 +240,7 @@ function menu_tree_output_alter($tree) {
  *   Array of variables.
  */
 function al_saif_preprocess_node(array &$vars) {
-   // var_dump($vars); die('----');
+    // var_dump($vars); die('----');
     // Display only the first uploaded image in teasers
     if (!empty($vars['teaser']) && isset($vars['content']['field_image'])) {
         $vars['content']['field_image']['#items'] = array($vars['content']['field_image'][0]);
@@ -281,19 +288,19 @@ function al_saif_preprocess_node(array &$vars) {
         }
     }
     // SAHIL BABU //
-    if ('blog' ==  $vars['node']->type) {
+    if ('blog' == $vars['node']->type) {
         // var_dump($vars['content']);
-       //  print "<pre>"; print_r($vars['field_image'][0]); die("</pre>"); 
-        $vars['blog_category'] = (isset($vars['field_category'])) ? (isset($vars['field_category']['und'])) ? $vars['field_category']['und']: $vars['field_category'] : array();
-        $vars['blog_image'] = (isset($vars['field_image'])) ? (isset($vars['field_image']['und'])) ? $vars['field_image']['und']:$vars['field_image'] : array();
-        $vars['date'] = date("jS F Y",$vars['node']->created); 
-        if('full' == $vars['view_mode']){
-          //  $vars['content'] = $vars['content']['body']['#object']->body['und'][0]['value'];
+          // print "<pre>"; print_r($vars); die("</pre>"); 
+        $vars['blog_category'] = (isset($vars['field_category'])) ? (isset($vars['field_category']['und'])) ? $vars['field_category']['und'] : $vars['field_category']  : array();
+        $vars['blog_image'] = (isset($vars['field_image'])) ? (isset($vars['field_image']['und'])) ? $vars['field_image']['und'] : $vars['field_image']  : array();
+        $vars['date'] = date("jS F Y", $vars['node']->created);
+        if ('full' == $vars['view_mode']) {
+            //  $vars['content'] = $vars['content']['body']['#object']->body['und'][0]['value'];
         }
-       //  var_dump($vars['date']);
+        //  var_dump($vars['date']);
     }
     // Forum nodes
-    if ('forum' ==  $vars['node']->type) {
+    if ('forum' == $vars['node']->type) {
 
         $vars['classes_array'][] = 'forum-post';
         $vars['classes_array'][] = 'forum-top';

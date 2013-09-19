@@ -1,6 +1,5 @@
 <?php
 // $Id: page.tpl.php,v 1.17.2.4 2013/08/19 14:42:44 sahilbabu Exp $
-
 /**
  * @file
  * Default theme implementation to display a single Drupal page.
@@ -141,20 +140,22 @@
     </header>
 
     <!-- Header End -->
-
-
-      
-
-    <!-- Content Wrapper Start -->
+    <?php if ($type == 'blog'):  ?> 
+        <div id="pageTitle" class="clearfix">
+            <h1>What We Think</h1>
+        </div>
     
+    <!-- Content Wrapper Start -->
+
     <article id="content" class="clearfix"> 
-                <div class="postsContainer classic">
-                    <?php  print render ($page['content']); ?>
-                                   
-                </div>
+        <div class="postsContainer classic">
+
+            <?php print render($page['content']); ?>
+
+        </div>
     </article>
 
-    
+    <?php endif; ?>
 
     <!-- Content Wrapper End -->
 
@@ -427,45 +428,45 @@
         var revapi1;
 
         tpj(document).ready(
-        function() {
+                function() {
 
-            if (tpj.fn.cssOriginal != undefined)
-                tpj.fn.css = tpj.fn.cssOriginal;
+                    if (tpj.fn.cssOriginal != undefined)
+                        tpj.fn.css = tpj.fn.cssOriginal;
 
-            if (tpj("#rev_slider_1_1").revolution == undefined)
-                revslider_showDoubleJqueryError("#rev_slider_1_1");
-            else
-                revapi1 = tpj("#rev_slider_1_1").show().revolution(
-            {
-                delay: 6000,
-                startwidth: 940,
-                startheight: 400,
-                hideThumbs: 200,
-                thumbWidth: 100,
-                thumbHeight: 50,
-                thumbAmount: 4,
-                navigationType: "bullet",
-                navigationArrows: "verticalcentered",
-                navigationStyle: "round",
-                touchenabled: "on",
-                onHoverStop: "on",
-                navOffsetHorizontal: 0,
-                navOffsetVertical: 20,
-                shadow: 2,
-                fullWidth: "off",
-                stopLoop: "off",
-                stopAfterLoops: -1,
-                stopAtSlide: -1,
-                shuffle: "off",
-                hideSliderAtLimit: 0,
-                hideCaptionAtLimit: 0,
-                hideAllCaptionAtLilmit: 0
-            });
+                    if (tpj("#rev_slider_1_1").revolution == undefined)
+                        revslider_showDoubleJqueryError("#rev_slider_1_1");
+                    else
+                        revapi1 = tpj("#rev_slider_1_1").show().revolution(
+                                {
+                                    delay: 6000,
+                                    startwidth: 940,
+                                    startheight: 400,
+                                    hideThumbs: 200,
+                                    thumbWidth: 100,
+                                    thumbHeight: 50,
+                                    thumbAmount: 4,
+                                    navigationType: "bullet",
+                                    navigationArrows: "verticalcentered",
+                                    navigationStyle: "round",
+                                    touchenabled: "on",
+                                    onHoverStop: "on",
+                                    navOffsetHorizontal: 0,
+                                    navOffsetVertical: 20,
+                                    shadow: 2,
+                                    fullWidth: "off",
+                                    stopLoop: "off",
+                                    stopAfterLoops: -1,
+                                    stopAtSlide: -1,
+                                    shuffle: "off",
+                                    hideSliderAtLimit: 0,
+                                    hideCaptionAtLimit: 0,
+                                    hideAllCaptionAtLilmit: 0
+                                });
 
-            tpj.restyleRevo(revapi1, tpj("#rev_slider_1_1")
-            .parent().parent());
+                    tpj.restyleRevo(revapi1, tpj("#rev_slider_1_1")
+                            .parent().parent());
 
-        }); //ready
+                }); //ready
     </script>
 </div>
 <div id="oldie">

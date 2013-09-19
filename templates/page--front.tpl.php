@@ -135,11 +135,15 @@
     <!-- Header End -->
 
     <!-- Content Area -->
-    <br style="margin-top: 10px" />
     <!-- Content Wrapper Start -->
 
-
-    <article id="content" class="clearfix">
+    <header class="rbTagline clearfix wicon">
+            <i class="i-medium icon-mic"></i>
+            <h1>Hi, there! Welcome to Al Saif Professionals</h1>
+            <h2>Where finest codes &amp; coders coincide</h2>
+    </header>
+    <br style="margin-top: 10px" />
+    <!--<article id="content" class="clearfix">-->
 
 
         <div class="clearfix rev minimal-1">
@@ -615,7 +619,7 @@
             <a href="http://demo.krownthemes.com/goodwork/our-work/" class="btnAll">View all portfolio &rarr;</a>
         </section>
         <!-- What We've Built  -->
-
+         <br style="margin-top: 10px" />
         <!-- why us block  -->
         <div class="row-fluid">
             <div class="wpb_content_element span6 column_container">
@@ -1079,7 +1083,7 @@
         <br style="margin-top: -80px" class="rbBlankNeg" />
 
 
-    </article>
+    <!--</article>-->
 
     <!-- Content Wrapper End -->
     <!-- Content Area End -->

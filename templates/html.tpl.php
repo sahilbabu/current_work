@@ -55,7 +55,7 @@
         <?php print $styles; ?>
         <?php print $scripts; ?>
     </head>
-    <body id="body" class="pagevc_responsive <?php print $classes; ?>" <?php print $attributes; ?>>
+    <body id="body" class="<?php print $classes; ?>" <?php print $attributes; ?>>
         <?php print $page_top; ?>
         <?php print $page; ?>
         <?php print $page_bottom; ?>

@@ -5,6 +5,7 @@
 //print '<pre>';
 //print_r($taxonomy);
 //print '</pre>'; exit;
+
 ?>
 <?php  if ($type == 'blog' && $view_mode == 'teaser'): ?>
 <?php   // if (!$page): ?>
@@ -117,14 +118,7 @@
         </div>
 
     </section>
-
-    
-
-</article>
-<?php endif; ?>
-<?php endif; ?>
-
-<?php /* ?>
+    <?php /* ?>
 <footer>
 
 
@@ -345,3 +339,8 @@
 
     </footer>
 <?php */ ?>
+    
+
+</article>
+<?php endif; ?>
+<?php endif; ?>
