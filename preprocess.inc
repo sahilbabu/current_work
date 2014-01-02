@@ -14,21 +14,13 @@
  *   Array of variables.
  */
 function al_saif_preprocess_html(array &$vars) {
-    // $path = drupal_get_path_alias($_GET['q']);
-    // $aliases = explode('/', $path);
-    //  print $path;
-    // $node = menu_get_object();
-    // print "<pre>"; var_dump($node); print "</pre>"; die();
-    //   $vars['classes_array'][] = ' page';
-    $shoo = $vars['page']['content']['system_main']['nodes'];
-    $key = key($shoo);
-    $type = $shoo[$key]['body']['#object']->type;
+    $item = menu_get_item();
+    unset($vars['classes_array']);
     $vars['classes_array'][] = 'vc_responsive';
     $vars['classes_array'][] = 'page';
-    if ($type == 'blog' && !drupal_is_front_page()) {
+    if (isset($item['path']) && $item['path'] == 'blog' && !drupal_is_front_page()) {
         $vars['classes_array'][] = 'right-sidebar';
     }
-    //  $node = menu_get_object();
     // print "<pre>"; print_r($shoo[$key]['body']['#object']->type); exit('======');
     // Add conditional stylesheets for IE
 //  drupal_add_css(
@@ -293,7 +285,7 @@ function al_saif_preprocess_node(array &$vars) {
     // SAHIL BABU //
     if ('blog' == $vars['node']->type) {
         // var_dump($vars['content']);
-          // print "<pre>"; print_r($vars); die("</pre>"); 
+        // print "<pre>"; print_r($vars); die("</pre>"); 
         $vars['blog_category'] = (isset($vars['field_category'])) ? (isset($vars['field_category']['und'])) ? $vars['field_category']['und'] : $vars['field_category']  : array();
         $vars['blog_image'] = (isset($vars['field_image'])) ? (isset($vars['field_image']['und'])) ? $vars['field_image']['und'] : $vars['field_image']  : array();
         $vars['date'] = date("jS F Y", $vars['node']->created);
