@@ -45,9 +45,10 @@
 <!--[if IE 8]> <html lang="en-US" class="no-touch no-js ie8 ie full" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
 <!--[if IE 9]> <html lang="en-US" class="no-touch no-js no-ie ie9 full" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
 <!--[if gt IE 9]><!-->
-<html lang="<?php print $language->language; ?>" class="no-ie no-touch no-js full" dir="<?php print $language->dir; ?>"<?php // print $rdf_namespaces; ?>>
+<html lang="<?php print $language->language; ?>" class="no-ie no-touch no-js full" dir="<?php print $language->dir; ?>"<?php // print $rdf_namespaces;  ?>>
     <!--<![endif]-->
-    <head profile="<?php print $grddl_profile; ?>"<?php if (isset($head_prefixes) && $head_prefixes): ?> prefix="<?php print $head_prefixes; ?>"<?php endif; ?>>
+    <!--<head profile="<?php //print $grddl_profile;  ?>"<?php //if (isset($head_prefixes) && $head_prefixes):  ?> prefix="<?php //print $head_prefixes;  ?>"<?php // endif;  ?>>-->
+    <head >
         <?php print $head; ?>
         <!-- META -->
 

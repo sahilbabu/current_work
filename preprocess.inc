@@ -17,14 +17,15 @@ function al_saif_preprocess_html(array &$vars) {
     // $path = drupal_get_path_alias($_GET['q']);
     // $aliases = explode('/', $path);
     //  print $path;
-    // print "<pre>"; var_dump(get_defined_vars()); print "</pre>";
+    // $node = menu_get_object();
+    // print "<pre>"; var_dump($node); print "</pre>"; die();
     //   $vars['classes_array'][] = ' page';
     $shoo = $vars['page']['content']['system_main']['nodes'];
     $key = key($shoo);
     $type = $shoo[$key]['body']['#object']->type;
     $vars['classes_array'][] = 'vc_responsive';
     $vars['classes_array'][] = 'page';
-    if ($type == 'blog') {
+    if ($type == 'blog' && !drupal_is_front_page()) {
         $vars['classes_array'][] = 'right-sidebar';
     }
     //  $node = menu_get_object();
@@ -47,9 +48,9 @@ function al_saif_preprocess_html(array &$vars) {
 //    drupal_add_js(libraries_get_path('jquery.blockUI.js'));
 //  }
     // Add a special CSS class to the page when there no breadcrumb is going to be displayed
-    if (2 > count(drupal_get_breadcrumb())) {
-        $vars['classes_array'][] = 'no-breadcrumbs';
-    }
+//    if (2 > count(drupal_get_breadcrumb())) {
+//        $vars['classes_array'][] = 'no-breadcrumbs';
+//    }
 }
 
 /**
@@ -73,7 +74,9 @@ function al_saif_preprocess_page(array &$vars) {
     $shoo = $vars['page']['content']['system_main']['nodes'];
     $key = key($shoo);
     $type = $shoo[$key]['body']['#object']->type;
+    $view_mode = $shoo[$key]['body']['#view_mode'];
     $vars['type'] = $type;
+    $vars['view_mode'] = $view_mode;
 
     //  print "<pre>"; print_r($vars); exit('======');
     // Render social links

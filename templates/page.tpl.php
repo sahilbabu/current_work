@@ -143,7 +143,7 @@
     <!-- Header End -->
 
     <!-- Content Area -->
-    <?php //  print render($page['content']); ?>
+    <?php   print render($page['content']); ?>
     <!-- Content Area End -->
 
 

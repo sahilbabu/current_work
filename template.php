@@ -410,3 +410,15 @@ function al_saif_preprocess_block(array &$vars) {
         $vars['classes_array'][] = 'block-without-title';
     }
 }
+
+
+function al_saif_preprocess_user_login(&$vars) {
+    $vars['intro_text'] = t('This is my awesome login form');
+    //print_r($vars);
+    //alter the login form here
+}
+ 
+function al_saif_preprocess_user_register_form(&$vars) {
+    $vars['intro_text'] = t('This is my super awesome reg form');
+//  alter the reset password form here
+}

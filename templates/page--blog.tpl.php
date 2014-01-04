@@ -1,5 +1,5 @@
 <?php
-// $Id: page.tpl.php,v 1.17.2.4 2013/08/19 14:42:44 sahilbabu Exp $
+// $Id: page--blog.tpl.php,v 1.17.2.4 2013/08/19 14:42:44 sahilbabu Exp $
 /**
  * @file
  * Default theme implementation to display a single Drupal page.
@@ -65,6 +65,8 @@
  * @see template_preprocess_page()
  * @see template_process()
  */
+global $base_path, $base_url;
+// die($base_url);
 ?>
 
 <!-- Main Wrapper Start -->
@@ -140,11 +142,18 @@
     </header>
 
     <!-- Header End -->
-    <?php if ($type == 'blog'):  ?> 
-        <div id="pageTitle" class="clearfix">
-            <h1>What We Think</h1>
-        </div>
-    
+    <?php if ($type == 'blog'):  ?>  
+            <div id="pageTitle" class="clearfix">
+                <h1>What We Think</h1>
+                <?php  if ($view_mode == 'full'):  ?>
+                <nav class="postsNav">
+				<span class="prev">
+                                    <a rel="prev" href="<?php echo $base_url; ?>/blog">Back to Blog </a>
+                                </span>				
+                </nav>
+                  <?php  endif; ?>
+            </div>
+      
     <!-- Content Wrapper Start -->
 
     <article id="content" class="clearfix"> 
@@ -154,7 +163,8 @@
 
         </div>
     </article>
-
+    <?php else:  ?> 
+     <?php print render($page['content']); ?>
     <?php endif; ?>
 
     <!-- Content Wrapper End -->
@@ -271,209 +281,4 @@
 </div>
 
 <!-- Main Wrapper End -->
-
-<!-- Footer #1 Wrapper Start -->
-
-
-<footer id="footer1" class="clearfix">
-
-    <div class="row-fluid">
-
-        <div class="column_container span3 clearfix">
-            <section id="meta-3" class="widget widget_meta clearfix">
-                <div class="widget_title"><h5>Pages</h5></div>
-                <ul>
-                    <li><a href="why-us.html">Why Us</a></li>
-                    <li><a href="icon.html" title="Syndicate ">Entries <abbr	title="Really Simple Syndication">icon</abbr></a></li>
-                    <li><a href="#" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
-                    <li><a href="#" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>
-                </ul>
-            </section>
-        </div>
-
-        <div class="column_container span3 clearfix">
-            <section id="meta-3" class="widget widget_meta clearfix">
-                <div class="widget_title"><h5>Services</h5></div>
-                <ul>
-                    <li><a href="web-development.html" title=" ">Web <abbr title="Development">Development</abbr></a></li>
-                    <li><a href="mobile-development.html">Mobile Development</a></li>
-                    <li><a href="developer-work-cycle.html" title="Developer ">Developer <abbr title="Work Cycle ">Work Cycle</abbr></a></li>
-                    <li><a href="#" title="Powered  ">WordPress.org</a></li>
-                </ul>
-            </section>
-        </div>
-
-        <div class="column_container span3 clearfix">
-            <section id="meta-3" class="widget widget_meta clearfix">
-                <div class="widget_title"><h5>Portfolio</h5></div>
-                <ul>
-                    <li><a href="#">Log in</a></li>
-                    <li><a href="#" title="Syndicate this site using RSS 2.0">Entries <abbr	title="Really Simple Syndication">RSS</abbr></a></li>
-                    <li><a href="#" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
-                    <li><a href="#" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>
-                </ul>
-            </section>
-        </div>
-
-        <div class="column_container span3">
-            <section id="text-18" class="widget widget_text clearfix">
-                <div class="widget_title">
-                    <h5>Get in touch</h5>
-                </div>
-                <div class="textwidget">
-                    <section class="rbContactInfo  autop">
-                        <ul>
-                            <li class="address">Jacky George St. 158-56, EastLondon,
-                                NF1561, UK</li>
-                            <li class="phone">+460 123 456 789</li>
-                            <li class="email"><a href="mailto:hello@showcase.me">hello@showcase.me</a></li>
-                            <li class="flag"><a
-                                    href="http://demo.krownthemes.com/goodwork/contact-us-2/">Find
-                                    us on the map</a></li>
-                        </ul>
-                    </section>
-                </div>
-            </section>
-            <section id="text-19" class="widget widget_text clearfix">
-                <div class="widget_title">
-                    <h5>Get in touch</h5>
-                </div>
-                <div class="textwidget">
-                    <section class="rbForm minimal autop">
-                        <form method="POST"
-                              action="http://demo.krownthemes.com/goodwork/wp-content/themes/goodwork/includes/contact-form.php">
-                            <input type="text" name="name" class="name" value="Name" /> <input
-                                type="email" name="email" class="email" value="Email" /> <input
-                                type="text" name="subject" value="Subject Here!"
-                                class="subject hidden" />
-                            <textarea name="message" class="message">Message</textarea>
-                            <input type="text" name="fred" class="fred hidden" value="" />
-                            <input type="submit" class="submit" value="Send" /> <input
-                                type="hidden" name="dlo128" class="hidden dlo128"
-                                value="me@rubenbristian.com" />
-                        </form>
-                        <p class="hidden successMessage">Your message was
-                            successfully sent! We will contact you back as soon as possible!</p>
-                        <p class="hidden errorMessage">Complete all the fields</p>
-                    </section>
-                </div>
-            </section>
-        </div>
-
-
-
-    </div>
-
-</footer>
-
-
-<!-- Footer #1 Wrapper End -->
-
-<!-- Footer #2 Wrapper Start -->
-
-<footer id="footer2" class="clearfix">
-
-    <div class="clearfix">
-
-        <div class="left clearfix">
-            <div id="nav_menu-6" class="widget left widget_nav_menu">
-                <div class="menu-footer-menu-container">
-                    <ul id="menu-footer-menu" class="menu">
-                        <li id="menu-item-197"
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-197"><a
-                                href="#">Showcase © 2013</a></li>
-                        <li id="menu-item-198"
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-198"><a
-                                href="#">Legal Notice</a></li>
-                        <li id="menu-item-199"
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-199"><a
-                                href="#">Terms</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="right clearfix">
-            <div id="text-20" class="widget right widget_text">
-                <div class="textwidget">
-                    <div class="clearfix">
-                        <section class="rbSocial clearfix notli icons">
-                            <ul>
-                                <li class="i-square icon-twitter"><a href="#">#</a></li>
-                                <li class="i-square icon-facebook-squared"><a href="#">#</a></li>
-                                <li class="i-square icon-dribbble"><a href="#">#</a></li>
-                                <li class="i-square icon-linkedin"><a href="#">#</a></li>
-                                <li class="i-square icon-cloud"><a href="#">#</a></li>
-                                <li class="i-square icon-rss"><a href="#">#</a></li>
-                            </ul>
-                        </section>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-</footer>
-
-<!-- Footer #2 Wrapper End -->
-
-<div id="scripts">
-
-    <script type='text/javascript' src='<?php print path_to_theme(); ?>/js/plugins.min.js'></script>
-    <script type='text/javascript' src='<?php print path_to_theme(); ?>/js/scripts.min.js'></script>
-    <script type="text/javascript">
-        var tpj = jQuery;
-        tpj.noConflict();
-        var revapi1;
-
-        tpj(document).ready(
-                function() {
-
-                    if (tpj.fn.cssOriginal != undefined)
-                        tpj.fn.css = tpj.fn.cssOriginal;
-
-                    if (tpj("#rev_slider_1_1").revolution == undefined)
-                        revslider_showDoubleJqueryError("#rev_slider_1_1");
-                    else
-                        revapi1 = tpj("#rev_slider_1_1").show().revolution(
-                                {
-                                    delay: 6000,
-                                    startwidth: 940,
-                                    startheight: 400,
-                                    hideThumbs: 200,
-                                    thumbWidth: 100,
-                                    thumbHeight: 50,
-                                    thumbAmount: 4,
-                                    navigationType: "bullet",
-                                    navigationArrows: "verticalcentered",
-                                    navigationStyle: "round",
-                                    touchenabled: "on",
-                                    onHoverStop: "on",
-                                    navOffsetHorizontal: 0,
-                                    navOffsetVertical: 20,
-                                    shadow: 2,
-                                    fullWidth: "off",
-                                    stopLoop: "off",
-                                    stopAfterLoops: -1,
-                                    stopAtSlide: -1,
-                                    shuffle: "off",
-                                    hideSliderAtLimit: 0,
-                                    hideCaptionAtLimit: 0,
-                                    hideAllCaptionAtLilmit: 0
-                                });
-
-                    tpj.restyleRevo(revapi1, tpj("#rev_slider_1_1")
-                            .parent().parent());
-
-                }); //ready
-    </script>
-</div>
-<div id="oldie">
-    <p>
-        This is a unique website which will require a more modern browser to
-        work! <a href="https://www.google.com/chrome/" target="_blank">Please
-            upgrade today!</a>
-    </p>
-</div>
-<!-- THE CODE BELOW IS NOT AVAILABLE IN THE THEME, SINCE IT'S FOR THE THEME CUSTOMIZER -->
+<?php include 'page-footer.tpl.php'; ?>
