@@ -64,12 +64,16 @@ function al_saif_process_html(array &$vars) {
  *   Array of variables.
  */
 function al_saif_preprocess_page(array &$vars) {
-    $shoo = $vars['page']['content']['system_main']['nodes'];
-    $key = key($shoo);
-    $type = $shoo[$key]['body']['#object']->type;
-    $view_mode = $shoo[$key]['body']['#view_mode'];
-    $vars['type'] = $type;
-    $vars['view_mode'] = $view_mode;
+   // $shoo = $vars['page']['content']['system_main']['nodes'];
+   // $key = key($shoo);
+   // $type = $shoo[$key]['body']['#object']->type;
+   // $view_mode = $shoo[$key]['body']['#view_mode'];
+   // $vars['type'] = $type;
+   // $vars['view_mode'] = $view_mode;
+    if (!drupal_is_front_page()) {
+        $vars['blog_data'][] = al_saif_get_blog();
+    }
+    
 
     //  print "<pre>"; print_r($vars); exit('======');
     // Render social links

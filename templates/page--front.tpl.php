@@ -67,7 +67,7 @@
  */
 ?>
 <?php print render($page['content']['metatags']); ?>
-<?php //print_r($page); die();?>
+<?php // print_r($page); die();?>
 <!-- Main Wrapper Start -->
 
 <div class="wrapper clearfix tttrue">

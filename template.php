@@ -1,5 +1,4 @@
 <?php
-
 // $Id: template.php,v 1.9.2.3 2013/07/25 01:16:24 sahilbabu Exp $
 
 /**
@@ -81,51 +80,51 @@ function al_saif_html_head_alter(array &$head_elements) {
  */
 function al_saif_theme(array &$existing, $type, $theme, $path) {
     return array(
-    // theme wrapper for the main menu
-    'menu_tree__main_menu' => array(
-    'file' => 'templates/theme.inc',
-    'render element' => 'tree',
-    ),
-    // custom theme function for breadcrumbs
-    'breadcrumb' => array(
-    'file' => 'templates/theme.inc',
-    ),
-    // taxonomy tags
-    'field__taxonomy_term_reference' => array(
-    'file' => 'templates/theme.inc',
-    ),
-    // popup boxes
-    'popup_box' => array(
-    'file' => 'templates/theme.inc',
-    'render element' => 'popup',
-    ),
-    // buttons
-    'button' => array(
-    'file' => 'templates/theme.inc',
-    'render element' => 'element',
-    ),
-    // input with type=password
-    'password' => array(
-    'file' => 'templates/theme.inc',
-    'render element' => 'element',
-    ),
-    // Drupal pagers
-    'pager' => array(
-    'file' => 'templates/theme.inc',
-    ),
-    // popup status messages
-    'status_messages' => array(
-    'file' => 'templates/theme.inc',
-    ),
-    // sort indicator for tables
-    'user_login' => array(
-    'render element' => 'form',
-    'path' => drupal_get_path('theme', 'al_saif') . '/templates',
-    'template' => 'user-login',
-    'preprocess functions' => array(
+        // theme wrapper for the main menu
+        'menu_tree__main_menu' => array(
+            'file' => 'templates/theme.inc',
+            'render element' => 'tree',
+        ),
+        // custom theme function for breadcrumbs
+        'breadcrumb' => array(
+            'file' => 'templates/theme.inc',
+        ),
+        // taxonomy tags
+        'field__taxonomy_term_reference' => array(
+            'file' => 'templates/theme.inc',
+        ),
+        // popup boxes
+        'popup_box' => array(
+            'file' => 'templates/theme.inc',
+            'render element' => 'popup',
+        ),
+        // buttons
+        'button' => array(
+            'file' => 'templates/theme.inc',
+            'render element' => 'element',
+        ),
+        // input with type=password
+        'password' => array(
+            'file' => 'templates/theme.inc',
+            'render element' => 'element',
+        ),
+        // Drupal pagers
+        'pager' => array(
+            'file' => 'templates/theme.inc',
+        ),
+        // popup status messages
+        'status_messages' => array(
+            'file' => 'templates/theme.inc',
+        ),
+        // sort indicator for tables
+        'user_login' => array(
+            'render element' => 'form',
+            'path' => drupal_get_path('theme', 'al_saif') . '/templates',
+            'template' => 'user-login',
+            'preprocess functions' => array(
                 'al_saif_preprocess_user_login'
-                )
-     ),
+            )
+        ),
     );
 }
 
@@ -411,14 +410,71 @@ function al_saif_preprocess_block(array &$vars) {
     }
 }
 
-
 function al_saif_preprocess_user_login(&$vars) {
     $vars['intro_text'] = t('This is my awesome login form');
     //print_r($vars);
     //alter the login form here
 }
- 
+
 function al_saif_preprocess_user_register_form(&$vars) {
     $vars['intro_text'] = t('This is my super awesome reg form');
 //  alter the reset password form here
+}
+
+/* custom function area */
+
+function al_saif_get_blog() {
+
+    $blog_data = query_get_blog_items();
+
+    print "<pre>";
+    print_r($blog_data);
+    die('----');
+    foreach ($node as $item) {
+        
+    }
+}
+
+function query_get_blog_items() {
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+            ->entityCondition('bundle', 'blog')
+            ->propertyCondition('status', 1)
+            // ->fieldCondition('field_news_types', 'value', 'spotlight', '=')
+            // ->fieldCondition('field_photo', 'fid', 'NULL', '!=')
+            // ->fieldCondition('field_faculty_tag', 'tid', $value)
+            //  ->fieldCondition('field_news_publishdate', 'value', $year . '%', 'like')
+            //  ->fieldOrderBy('field_photo', 'fid', 'DESC')
+            ->range(0, 10)
+            ->addMetaData('account', user_load(1)); // Run the query as user 1.
+    $result = $query->execute();
+    $node = (isset($result['node'])) ? $result['node'] : array();
+    $items_nids = array_keys($node);
+    $blog_items = entity_load('node', $items_nids);
+    return $blog_items;
+}
+
+
+
+function al_saif_view_blog($node = false, $view = 'classic', $theme_path = '') {
+
+    if (!$artist_url) {
+        $artist_url = jgm_build_url(array("title" => $v['node_title']), 'profileartist');
+        //'/artist/'.urlsafe().'/pa'.$v['nid'].'/podcast/'.urlsafe($v['podcast_title']);
+    }
+    switch ($view) {
+        case "grid":
+            ?>
+            
+
+            <?php
+            break;
+
+        case "list":
+            ?>
+           
+          
+            <?php
+            break;
+    }
 }
