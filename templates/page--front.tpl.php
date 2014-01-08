@@ -1,5 +1,5 @@
 <?php
-// $Id: page.tpl.php,v 1.17.2.4 2013/08/19 14:42:44 sahilbabu Exp $
+// $Id: page--front.tpl.php,v 1.17.2.4 2013/08/19 14:42:44 sahilbabu Exp $
 /**
  * @file
  * Default theme implementation to display a single Drupal page.
@@ -154,7 +154,7 @@
     <div class="clearfix rev minimal-1">
         <!-- START REVOLUTION SLIDER 2.2.3 -->
         <div id="rev_slider_2_1_wrapper" class="rev_slider_wrapper"   style="margin: 0px auto; background-color: #f7f7f7; padding: 0px; margin-top: 0px; margin-bottom: 0px;">
-            <div id="rev_slider_2_1" class="rev_slider" style="display: none; background-image: url(<?php print path_to_theme(); ?>/images/slider/bg_minimal1@2x.jpg); background-repeat: no-repeat;">
+            <div id="rev_slider_2_1" class="rev_slider" >
                 <ul>
                     <li data-transition="fade" data-slotamount="7" data-masterspeed="500">
                         <img src="<?php print path_to_theme(); ?>/images/slider/bg_minimal1@2x-1024x435.jpg" alt="bg_minimal1@2x-1024x435"> 
@@ -633,7 +633,6 @@
     <!-- //why us block  -->
 
     <!-- Quote line -->
-    <div class="row-fluid">
         <header class="sectionTitle clearfix margin-bottom-45 ">
             <h3>
                 <i class="i-small icon-school"></i> <strong>In a hurry? No problem.</strong>
@@ -645,7 +644,6 @@
             <h5>We always welcome to client for their project analysis.</h5>
             <a class="rbButton large dark" href="#" target="_self">Get Started</a>
         </section>
-    </div>
     <!-- // Quote line -->
 
 

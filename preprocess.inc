@@ -18,7 +18,8 @@ function al_saif_preprocess_html(array &$vars) {
     unset($vars['classes_array']);
     $vars['classes_array'][] = 'vc_responsive';
     $vars['classes_array'][] = 'page';
-    if (isset($item['path']) && $item['path'] == 'blog' && !drupal_is_front_page()) {
+   // if (isset($item['path']) && $item['path'] == 'blog' && !drupal_is_front_page()) {
+    if (!drupal_is_front_page()) {
         $vars['classes_array'][] = 'right-sidebar';
     }
     // print "<pre>"; print_r($shoo[$key]['body']['#object']->type); exit('======');

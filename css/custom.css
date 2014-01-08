@@ -489,3 +489,28 @@ text-shadow: none;
 .margin-bottom-40 {margin-bottom: 40px}
 .margin-bottom-38 {margin-bottom: 38px}
 .margin-bottom-45 {margin-bottom: 45px}
+
+/*login page button*/
+button[type="submit"] {
+    background: none repeat scroll 0 0 #3B3B3B;
+    border: medium none;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: left;
+    font-size: 11px;
+    font-weight: bold;
+    height: 34px;
+    margin-top: -3px;
+    padding: 7px 12px;
+    text-transform: uppercase;
+    width: auto;
+}
+button[type="submit"] {
+    border-radius: 0;
+}
+button[type="submit"] {
+    transition: all 200ms ease 0s;
+}
+button[type="submit"]:hover {
+    background: none repeat scroll 0 0 #FD4326;
+}
